@@ -154,9 +154,6 @@ Collaborate between agents to synthesize useful insights
 
 🔗 Submission: [TBD]
 
-💡 Pro Tip:
-You can also include the Microsoft AI Agents Hackathon as a tag in your repo description:
-
 ```
 local multi-agent AI research bot | Ollama + Brave + AutoGen | Built for Microsoft AI Agents Hackathon
 ```
