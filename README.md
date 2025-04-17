@@ -141,4 +141,13 @@ For questions or ideas, open an issue or start a discussion!
 
 ---
 
-"This project is a personal project developed entirely outside of my employment using personal time and equipment."
+## Disclaimer
+
+This project is a personal project developed entirely outside of my employment using personal time and equipment. This work:
+
+- Was created on my own time without using employer resources
+- Does not contain or use any proprietary information, trade secrets, or intellectual property of any employer
+- Is not related to any current or anticipated business or research interests of my employer
+- Is provided as-is without any warranty or guarantee of any kind
+
+All opinions and implementations are my own and do not represent the views of any organization I am affiliated with.
