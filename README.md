@@ -1,141 +1,63 @@
-# 🧠 AutoGen-Compatible Multi-Agent Research POC with Ollama + BraveSearch
+# Genie
 
-This project is a proof of concept for a **local-first multi-agent system** using:
+Genie is an AI-powered software engineering assistant designed to help you solve programming problems, automate codebase modifications, provide examples, and enhance overall productivity during development.
 
-- 🤖 Local LLMs via **Ollama**
-- 🧩 Tool-call detection using `<tool_call>...` syntax
-- 🔍 Web search via **Brave Search API** or **Brave MCP plugin server**
-- 🧠 Two collaborating agents: `Searcher` and `Synthesizer`
+## Features
 
----
+- **Interactive Collaboration:** Genie assists with codebase modifications, bug fixes, explanations, and code examples during live sessions.
+- **Automated Code Editing:** Directly modifies, adds, or removes files in your project as per your requests.
+- **Knowledgeable Guidance:** Offers insightful explanations and solutions, tailored to your project's style and requirements.
+- **Safe & Transparent Integration:** All codebase changes are presented as clear "code artefacts" for your review.
 
-## 📁 Folder Structure
+## Usage
 
-```bash
-MultiResearchPOC/
-├── main.py                   # Entry point
-├── agents/
-│   ├── searcher.py           # Ollama-powered research agent
-│   └── synthesizer.py        # Summarizer agent
-├── tools/
-│   ├── tool_parser.py        # Tool call detection logic
-│   └── tool_registry.py      # Tool dispatcher (API or MCP)
-├── .env                      # Contains BRAVE_API_KEY
-└── requirements.txt          # Python dependencies
-```
+### 1. Start Genie
 
----
-
-## 🚀 Getting Started
-
-### 1. Clone the project
-
-```bash
-git clone <your-repo-url>
-cd MultiResearchPOC
-```
-
-### 2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Set up your `.env`
-
-```bash
-echo "BRAVE_API_KEY=your_brave_api_key_here" > .env
-```
-
-Get your Brave API key at: [https://developer.brave.com/api-search/](https://developer.brave.com/api-search/)
-
-### 4. Run Ollama locally
-
-```bash
-ollama run llama3:8b
-```
-
-> If using Docker: make sure to reference the host as `http://host.docker.internal:11434`
-
-### 5. Run the program
+Run the main script to launch Genie:
 
 ```bash
 python main.py
 ```
 
-You should see:
+Depending on your setup, this may start a command-line or web-based interface.
 
-- A response from the `Searcher` agent
-- A tool call triggered
-- Search results pulled from Brave
-- A final summary from the `Synthesizer` agent
+### 2. Interact with Genie
 
----
+- **Get an Example:**  
+  Ask Genie for code snippets, demonstrations, or explanations using natural language.
+  > _Example: "How do I write a FastAPI route for file uploads?"_
 
-## 🔁 Switching Between API and MCP Plugin
+- **Modify Your Codebase:**  
+  Request direct changes, such as file creation, edits, renames, or removals.
+  > _Example: "Add an endpoint to our API for user authentication."_
 
-### Option 1: Brave Search API (default)
+- **Review Changes:**  
+  Genie presents every change as a "code artefact" so you can verify, approve, or discuss edits before applying them.
 
-Used by default via:
+- **Iterate:**  
+  Continue the conversation to refine solutions, fix bugs, or explore alternative approaches.
 
-```python
-"BraveSearch": call_brave_api
-```
+### 3. Custom Tools
 
-### Option 2: Brave MCP Plugin Server
+Genie can leverage custom tools placed in the `tools/` directory or agents in the `agents/` directory for enhanced or specialized workflows.
 
-1. Start the plugin server:
+## Best Practices
 
-```bash
-npx @modelcontextprotocol/server-brave-search
-```
+- **Codebase Style:** Genie automatically adapts to your existing code style—be as explicit as needed if you want something different.
+- **Review Before Apply:** Always check presented artefacts before integration.
+- **Provide Context:** The more details you share in your requests (e.g., error logs, file contents), the better Genie can assist.
 
-2. Update `tools/tool_registry.py`:
+## Project Structure
 
-```python
-# "BraveSearch": call_brave_api,
-"BraveSearch": call_brave_mcp_server
-```
+- `main.py` – Entry point to start Genie.
+- `agents/` – Contains custom agent scripts.
+- `tools/` – Utilities and helper modules.
+- `README.md` – This documentation.
 
----
+## Getting Help
 
-## 🔮 Next Steps & Improvements
-
-| Feature              | Description                                               |
-| -------------------- | --------------------------------------------------------- |
-| 🧠 Add Planner Agent | Dynamically decide which agent/tool to call               |
-| 🧩 Add More Tools    | CrunchbaseSearch, TwitterTrends, YouTubeSearch, etc.      |
-| 📄 Markdown Output   | Save session logs for review or integration with Obsidian |
-| 🖼️ Add UI           | Use Chainlit, FastAPI, or Discord bot for interaction     |
-| 🌐 Wrap as API       | Convert to a local API for web or CLI usage               |
+If you have questions about Genie's usage or want to extend its capabilities, start a conversation with Genie itself or review the source code for more details.
 
 ---
 
-## 📜 Sample Output
-
-```text
-🤖 Searcher Response:
-<tool_call>BraveSearch({"query": "African AI startups 2024 promising not mainstream"})</tool_call>
-
-🌐 Tool Output:
-• AI 100: ...
-• Five African AI startups to watch in 2023 ...
-
-🧠 Final Summary:
-- CB Insights lists top private AI companies...
-- 5 African startups solving problems in healthcare, marketing...
-```
-
----
-
-## 🙌 Credits
-
-- [Ollama](https://ollama.com)
-- [Brave Search API](https://developer.brave.com/api-search/)
-- [Semantic Kernel](https://github.com/microsoft/semantic-kernel)
-- Inspired by [AutoGen](https://github.com/microsoft/autogen)
-
----
-
-For questions or ideas, open an issue or start a discussion!
-
+Built with ❤️ by [Cosine AI](https://cosine.sh)
