@@ -139,3 +139,26 @@ npx @modelcontextprotocol/server-brave-search
 
 For questions or ideas, open an issue or start a discussion!
 
+
+
+🏗️ Built for the Microsoft AI Agents Hackathon
+This project was created as part of the Microsoft AI Agents Hackathon — a challenge focused on building intelligent, tool-using, autonomous agents powered by open-source and Microsoft technologies.
+
+The goal of this project is to showcase a local-first, multi-agent system that can:
+
+Generate dynamic tool calls
+
+Perform live web research using Brave Search
+
+Collaborate between agents to synthesize useful insights
+
+🔗 Submission: [TBD]
+
+💡 Pro Tip:
+You can also include the Microsoft AI Agents Hackathon as a tag in your repo description:
+
+bash
+Copy
+Edit
+local multi-agent AI research bot | Ollama + Brave + AutoGen | Built for Microsoft AI Agents Hackathon
+
