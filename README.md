@@ -139,3 +139,6 @@ npx @modelcontextprotocol/server-brave-search
 
 For questions or ideas, open an issue or start a discussion!
 
+---
+
+"This project is a personal project developed entirely outside of my employment using personal time and equipment."
